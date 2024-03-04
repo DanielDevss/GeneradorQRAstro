@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+import Input from "../components/Input.astro";
+import Download from "../components/Download.astro";
+import QR from "../icons/QR.astro";
+import Down from "../icons/Download.astro";
+import Reload from "../icons/Reload.astro";
+---
+
+<Layout
+    title="Generar códigos QR"
+    meta_description="Crea códigos QR de una manera múy rapida y fácil con está increible herramienta."
+>
+    <main class="w-container mx-auto">
+        <header class="my-5">
+            <h1 class="text-4xl font-medium">Generador de Códigos QR</h1>
+        </header>
+        <hr class="h-px my-8 bg-slate-500 border-0">
+        <article class="w-full flex gap-5 flex-col md:flex-row">
+            <section class="flex-1">
+                <h2 class="text-2xl font-semibold text-ellipsis text-nowrap">Información del QR</h2>
+                <Input placeholder="Ej: https://www.danidevs.com" id="inpURLQr" name="contentQR" >Ingresa un URL</Input>
+                <div class="mb-3">
+                    <label class="text-slate-200 pb-3 block mt-4" for="sizeQR">
+                        Tamaño de la imagen <span class="font-semibold"><span id="sizePX">410</span>px</span>
+                    </label>
+                    <input type="range" value="5" min="1" step="0.5" max="100" class="block mb-2 text-sm font-medium text-gray-900 w-full" name="sizeQR" id="sizeQR">
+                </div>
+                <Button type="button" id="btnGenerar">
+                    <QR class="h-6" />
+                    Generar QR
+                </Button>
+                <p class="text-pretty mt-3">Para generar tu código QR, por favor, proporciona la dirección web que deseas vincular, ya sea tu sitio web personal o tu portafolio. Una vez generado, puedes compartirlo en cualquier lugar que desees. ¡Ingresa la URL y comienza a compartir tu enlace de manera rápida y sencilla!</p>
+            </section>
+            <section class="flex-1 p-3 border-slate-500 border-2 rounded-md bg-slate-600 shadow-xl bg-opacity-50 backdrop-blur-md">
+                <h2 class="text-xl">Código QR</h2>
+                <div class="aspect-square my-3 relative rounded-md border-slate-400 border bg-opacity-50 grid place-content-center bg-slate-800">
+                    <p class="text-slate-500">Aquí se mostrará el QR generado</p>
+                    <img class="w-full h-full absolute left-0 top-0 z-30 opacity-0" id="imgResponseQR" />
+                </div>
+                
+                <div class="flex gap-3">
+                    <Download class="flex-1 pointer-events-none bg-slate-400" href="https://danidevs.com" id="downloadQR">
+                        <Down class="h-5" />
+                        Descargar
+                    </Download>
+                    <Button id="btnReset" classCustom="flex-1 pointer-events-none bg-slate-400 text-slate-900">
+                        <Reload class="h-5" />
+                        Limpiar
+                    </Button>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script src="../assets/js/generadorQR.js"></script>
+</Layout>

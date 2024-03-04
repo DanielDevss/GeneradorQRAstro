@@ -1,0 +1,24 @@
+---
+const { title, meta_description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-MX">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={meta_description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="h-lvh bg-gradient-to-r from-slate-900 to-slate-700 text-gray-50">
+
+		<header>
+		</header>
+
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+</style>
