@@ -6,6 +6,7 @@ import Download from "../components/Download.astro";
 import QR from "../icons/QR.astro";
 import Down from "../icons/Download.astro";
 import Reload from "../icons/Reload.astro";
+import TextArea from "../components/TextArea.astro";
 ---
 
 <Layout
@@ -13,14 +14,33 @@ import Reload from "../icons/Reload.astro";
     meta_description="Crea códigos QR de una manera múy rapida y fácil con está increible herramienta."
 >
     <main class="w-container mx-auto">
-        <header class="my-5">
+        <header class="mt-5 mb-4">
             <h1 class="text-4xl font-medium">Generador de Códigos QR</h1>
+            <div class="flex gap-4 mt-5">
+                <label class="text-lg" for="rLink">
+                    <input checked type="radio" name="select" id="rLink">
+                    Enlace a web
+                </label>
+                <label class="text-lg" for="rWhatsapp">
+                    <input type="radio" name="select" id="rWhatsapp">
+                    WhatsApp
+                </label>
+            </div>
         </header>
-        <hr class="h-px my-8 bg-slate-500 border-0">
-        <article class="w-full flex gap-5 flex-col md:flex-row">
+        <hr class="h-px mb-8 mt-4 bg-slate-500 border-0">
+        <article class="w-full flex items-start gap-5 flex-col md:flex-row">
             <section class="flex-1">
                 <h2 class="text-2xl font-semibold text-ellipsis text-nowrap">Información del QR</h2>
-                <Input placeholder="Ej: https://www.danidevs.com" id="inpURLQr" name="contentQR" >Ingresa un URL</Input>
+                
+                <div id="sEnlace">
+                    <Input placeholder="Ej: https://www.danidevs.com" id="inpURLQr" name="contentQR" >Ingresa un URL</Input>
+                </div>
+                
+                <div class="hidden" id="sWhatsapp">
+                    <Input id="inpNumber" placeholder="Ej: 7811084478">WhatsApp</Input>
+                    <TextArea name="message" id="taMsgWhats" placeholder="Mensaje de Whatsapp">Mensaje</TextArea>
+                </div>
+
                 <div class="mb-3">
                     <label class="text-slate-200 pb-3 block mt-4" for="sizeQR">
                         Tamaño de la imagen <span class="font-semibold"><span id="sizePX">410</span>px</span>
@@ -33,6 +53,8 @@ import Reload from "../icons/Reload.astro";
                 </Button>
                 <p class="text-pretty mt-3">Para generar tu código QR, por favor, proporciona la dirección web que deseas vincular, ya sea tu sitio web personal o tu portafolio. Una vez generado, puedes compartirlo en cualquier lugar que desees. ¡Ingresa la URL y comienza a compartir tu enlace de manera rápida y sencilla!</p>
             </section>
+
+
             <section class="flex-1 p-3 border-slate-500 border-2 rounded-md bg-slate-600 shadow-xl bg-opacity-50 backdrop-blur-md">
                 <h2 class="text-xl">Código QR</h2>
                 <div class="aspect-square my-3 relative rounded-md border-slate-400 border bg-opacity-50 grid place-content-center bg-slate-800">

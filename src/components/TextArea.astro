@@ -1,0 +1,7 @@
+---
+const { id, class:customClass, name } = Astro.props;
+---
+<div class="w-full flex flex-col my-3">
+    <label class="mb-3 text-slate-200" for={id}><slot /></label>
+    <textarea {...Astro.props} class={`px-4 py-2 bg-transparent border-2 border-slate-500 rounded-md bg-slate-800 outline-none placeholder:text-slate-500 transition-all ease focus:border-indigo-500 focus:outline-none ${customClass}`} name={name} id={id}></textarea>
+</div>
