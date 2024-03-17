@@ -14,6 +14,9 @@ dependencies:
   qrcode:
     specifier: ^1.5.3
     version: 1.5.3
+  save-svg-as-png:
+    specifier: ^1.4.17
+    version: 1.4.17
   tailwindcss:
     specifier: ^3.4.1
     version: 3.4.1
@@ -3113,6 +3116,10 @@ packages:
 
   /safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+    dev: false
+
+  /save-svg-as-png@1.4.17:
+    resolution: {integrity: sha512-7QDaqJsVhdFPwviCxkgHiGm9omeaMBe1VKbHySWU6oFB2LtnGCcYS13eVoslUgq6VZC6Tjq/HddBd1K6p2PGpA==}
     dev: false
 
   /section-matter@1.0.0:
